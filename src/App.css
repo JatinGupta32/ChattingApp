@@ -1,0 +1,206 @@
+@mixin mobile {
+  @media screen and (max-width: 480px) {
+    @content;
+  }
+}
+@mixin tablet {
+  @media screen and (max-width: 768px) {
+    @content;
+  }
+}
+@mixin laptop {
+  @media screen and (max-width: 1200px) {
+    @content;
+  }
+}
+
+body {
+  padding: 0;
+  margin: 0;
+}
+
+.App {
+  display: flex;
+  background-color: #9b9bff;
+  /* width: 100vw; */
+  height: 100vh;
+  flex-direction: column;
+  align-items: center;
+  font-family:'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+  position: relative;
+  overflow: hidden; 
+}
+
+.app-header {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  background-color: #2f2d52;
+  color: #ddddf7;
+  width: 100vw;
+  height: 7vh;
+  padding: 10px;
+}
+
+.logo {
+  font-weight: bold;
+  @include tablet {
+    display: none;
+  }
+}
+
+  .sign-out {
+  position: absolute;
+  right: 4%;  
+  }
+  
+  .button {
+    background-color: #ddddf7;
+    display: inline-flex;
+    /* height: 10%;
+    width: 80%; */
+    padding: 0.25px 15px;
+    border: 2px solid #BFC0C0;
+    border-radius: 4px;
+    margin: 20px 20px 20px 20px;
+    color: #2f2d52;
+    text-transform: uppercase;
+    text-decoration: none;
+    font-size: .8em;
+    letter-spacing: 1.5px;
+    align-items: center;
+    justify-content: center;
+    overflow: hidden;
+  }
+
+  #button-1 {
+    position: relative;
+    overflow: hidden;
+    cursor: pointer;
+  }
+  
+  #spin {
+    width: 0;
+    height: 0;
+    opacity: 0;
+    left: 70px;
+    top: 20px;
+    transform: rotate(0deg);
+    background: none;
+    position: absolute;
+    transition: all .5s ease-Out;
+  }
+  
+  #button-1:hover #spin {
+    width: 200%;
+    height: 500%;
+    opacity: 1;
+    left: -70px;
+    top: -70px;
+    background: #2f2d52;
+    color: #2f2d52;
+    transform: rotate(80deg);
+  }
+
+.app-container {
+  /* margin-top: 50px; */
+    position: absolute;
+    width: 65%;
+    height: 80%;
+    display: flex;
+    overflow: hidden;
+    top: 100px;
+    @include tablet {
+     width: 90%;
+     
+}}
+
+.room {
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
+
+.label{
+  font-family: 'georgia';
+  /* font-weight: bold; */
+  font-size: 25px;
+}
+
+.room label {
+  text-align: center;
+  margin-bottom: 20px;
+}
+
+.room input {
+  width: 200px;
+  height: 30px;
+  border: 2px solid #3b5998;
+  border-radius: 6px;
+  padding-left: 5px;
+  font-size: 20px;
+  text-align: center;
+  margin-bottom: 10px;
+}
+.room button {
+  width: 210px;
+  height: 40px;
+  border: none;
+  border-radius: 6px;
+  padding-left: 5px;
+  font-size: 20px;
+  text-align: center;
+  margin: 5px;
+  background-color: #3b5998;
+  color: white;
+  cursor: pointer;
+}
+
+.button3{
+  background-color: #2f2d52;
+  width: fit-content;
+  padding: 0.8rem 2.3rem;
+  font-size: 18px;
+  font-weight: 500;
+  color: white;
+  box-shadow: 5px 5px 7px 0px #0000003f; 
+  position: relative;
+  transition: all 0.5s;
+  z-index: 1;
+  cursor: pointer;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+
+}
+
+.button3::before{
+  content: "";
+  position: absolute;
+  background-color: white;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  transform: scaleX(0);
+  transform-origin: left;
+  transition: all 0.8s;
+  z-index: -1;
+     
+}
+
+.button3:hover::before{
+  transform: scaleX(1);
+}
+.button3:hover{
+  border: 3px solid var(--bgOrange);
+  color: black;
+}
+
+.icon{
+  font-size: 32px;
+  margin-right: 12px;
+  margin-top: 3px;
+}

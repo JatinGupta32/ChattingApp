@@ -1,0 +1,54 @@
+.auth {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+    width: 100%;
+}
+
+.button3{
+    background-color: #2f2d52;
+    width: fit-content;
+    padding: 0.8rem 2.3rem;
+    font-size: 18px;
+    font-weight: 500;
+    color: white;
+    box-shadow: 5px 5px 7px 0px #0000003f; 
+    position: relative;
+    transition: all 0.5s;
+    z-index: 1;
+    cursor: pointer;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+
+}
+
+.button3::before{
+    content: "";
+    position: absolute;
+    background-color: white;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    transform: scaleX(0);
+    transform-origin: left;
+    transition: all 0.8s;
+    z-index: -1;
+       
+}
+
+.button3:hover::before{
+    transform: scaleX(1);
+}
+.button3:hover{
+    border: 3px solid var(--bgOrange);
+    color: black;
+}
+
+.signin{
+    font-family: 'georgia';
+    font-size: 18px;
+}

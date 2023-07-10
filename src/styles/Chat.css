@@ -1,0 +1,119 @@
+.chat-app {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    font-family: sans-serif;
+    width: 90%;
+    margin: 0 auto;
+    border-radius: 10px;
+    overflow: hidden;
+    border: 2px solid #3b5998;
+  }
+  .header {
+    background-color: #3b5998;
+    color: white;
+    width: 100%;
+    text-align: center;
+  }
+  .messages {
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    width: 100%;
+    height: 80%;
+    padding: 15px;
+    padding-left: 20px;
+    margin-bottom: 10px;
+    background-color: #ddddf7;
+    height: calc(100% - 160px);
+    overflow-y: scroll;   
+  }
+  
+  .message-container {
+    width: 100%;
+    height: 100%;
+    overflow-y: scroll;
+    overflow-x: hidden;
+  }
+  
+  .message-container::-webkit-scrollbar {
+    display: none;
+  }
+  
+  .message {
+    display: flex;
+    gap: 7px;
+    align-items: flex-start;
+    margin-bottom: 13px;
+    overflow-wrap: break-word;
+    word-break: break-word;
+  }
+   
+  .user {
+    display: flex;
+    align-items: flex-start;
+    font-weight: bold;
+    margin-left: 10px;
+    color: #333;
+  }
+
+  .typebar{
+    width: 100%;
+    height: 10%;
+    background-color: #3b5998;
+    display: flex;
+    padding: 5px;
+    justify-content: space-between;
+    align-items: center;
+  }
+  
+  .new-message-input {
+    width: 80%;
+    margin: auto;
+    display: flex;
+    border: 1px solid black;
+    background-color: #ddddf7;
+    font-size: 16px;
+    color: #333;
+    padding: 10px;
+    border-radius: 5px 0 0 5px;
+  }
+
+  .btn-pink{
+    background-color: #2f2d52;
+    width: 20% fit-content;
+    padding: 0.55rem 2rem;
+    font-size: 18px;
+    font-weight: 500;
+    color: white;
+    right: 3px;
+    /* box-shadow: 5px 5px 7px 0px #0000003f;  */
+    position: relative;
+    transition: all 0.5s;
+    z-index: 1;
+    cursor: pointer;
+    margin: auto;
+
+}
+.btn-pink::before{
+    content: "";
+    position: absolute;
+    background-color: #4f4d83;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    transform: scaleX(0);
+    transform-origin: left;
+    transition: all 0.8s;
+    z-index: -1;
+       
+}
+
+.btn-pink:hover::before{
+    transform: scaleX(1);
+}
+.btn-pink:hover{
+    border: 3px solid var(--bgOrange);
+    color: black;
+}
